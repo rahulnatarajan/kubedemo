@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: node-fe
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: node_fe
+    spec:
+      containers:
+      - name: k8s-demo
+        image: rahulna/dockerapp:v9
+        ports:
+        - name: nodefe-port
+          containerPort: 5000
